@@ -1,0 +1,3 @@
+<ng-container *ngIf="facts.length">
+    <app-carousel (save)="addFactToUser($event)" [removeButton]="false" [value]="facts"></app-carousel>
+</ng-container>
