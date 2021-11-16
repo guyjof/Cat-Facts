@@ -2,12 +2,6 @@ import { Fact } from 'src/app/types';
 import { Component, OnInit } from '@angular/core';
 import { FactsService } from 'src/app/services/facts.service';
 
-// interface Fact {
-//   fact: string,
-//   length: number
-// }
-
-
 @Component({
   selector: 'app-all-facts',
   templateUrl: './all-facts.component.html',
@@ -16,16 +10,23 @@ import { FactsService } from 'src/app/services/facts.service';
 export class AllFactsComponent implements OnInit {
 
   facts: Fact[] = []
+  userMsg: string = ''
 
   constructor(private factsService: FactsService) { }
+
+  showMsg(msg: string): void {
+    this.userMsg = msg
+    const delay: number = 3500
+    setTimeout(() => {
+      this.userMsg = ''
+    }, delay)
+  }
 
   addFactToUser(fact: Fact): void {
     this.factsService.saveFactToUser(fact)
       .subscribe(() => {
-        console.log('Saved fact');
       })
   }
-
 
   ngOnInit(): void {
     this.factsService.getFacts()

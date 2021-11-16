@@ -1,1 +1,3 @@
-<app-carousel (remove)="removeFactFromUser($event)" [addButton]="false" [value]="facts"></app-carousel>
+<app-carousel (remove)="removeFactFromUser($event)" (msg)="showMsg($event)" [addButton]="false" [value]="facts">
+</app-carousel>
+<user-msg [msg]="userMsg"></user-msg>

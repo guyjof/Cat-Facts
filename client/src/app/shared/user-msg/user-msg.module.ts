@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CarouselComponent } from './carousel/carousel.component';
+import { UserMsgComponent } from './user-msg.component';
 
 
 
 @NgModule({
-  declarations: [CarouselComponent],
+  declarations: [UserMsgComponent],
   imports: [
     CommonModule
   ],
   exports: [
-    CarouselComponent
+    UserMsgComponent
   ]
 })
-export class CarouselModule { }
+export class UserMsgModule { }

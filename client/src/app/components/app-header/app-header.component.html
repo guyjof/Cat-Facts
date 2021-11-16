@@ -2,12 +2,19 @@
     <div class="logo">
         <h1>
             <span>C</span>
-            Cat Facts
+            <a routerLink="/">
+                Cat Facts
+            </a>
         </h1>
     </div>
-    <nav>
+    <nav [ngClass]="{'closed': !menuIsOpen}">
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
         <a routerLink="/facts" routerLinkActive="active">ALL Facts</a>
         <a routerLink="/my" routerLinkActive="active">My Facts</a>
     </nav>
+    <div class="menu-btn center" [ngClass]="{'clicked': menuIsOpen}" (click)="toggleMenu()">
+        <div class="menu-btn-burger">
+
+        </div>
+    </div>
 </div>

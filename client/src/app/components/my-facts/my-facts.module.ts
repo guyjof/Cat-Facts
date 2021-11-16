@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { MyFactsComponent } from './my-facts/my-facts.component';
 import { MyFactsRoutingModule } from './my-facts-routing.module';
-import { CarouselModule } from 'src/app/shared/carousel.module';
+import { CarouselModule } from 'src/app/shared/carousel/carousel.module';
+import { UserMsgModule } from 'src/app/shared/user-msg/user-msg.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { CarouselModule } from 'src/app/shared/carousel.module';
   imports: [
     CommonModule,
     MyFactsRoutingModule,
-    CarouselModule
+    CarouselModule,
+    UserMsgModule
   ]
 })
 export class MyFactsModule { }

@@ -10,22 +10,31 @@ import { Fact } from 'src/app/types';
 export class MyFactsComponent implements OnInit {
 
   facts: Fact[] = []
+  userMsg: string = ''
 
   constructor(private factsService: FactsService) { }
+
+  showMsg(msg: string): void {
+    this.userMsg = msg
+    const delay: number = 3500
+    setTimeout(() => {
+      this.userMsg = ''
+    }, delay)
+  }
 
   removeFactFromUser(id: string): void {
     if (!id) return console.error('No id');
     this.factsService.deleteFactFromUser(id)
       .subscribe(() => {
-        console.log('Removed fact');
+        this.factsService.loadUserFacts()
+          .subscribe((response: Fact[]) => {
+            this.facts = response
+          })
       })
   }
 
   ngOnInit(): void {
     this.factsService.loadUserFacts()
-      .subscribe((response: Fact[]) => {
-        this.facts = response
-      })
+      .subscribe((response: Fact[]) => { this.facts = response })
   }
-
 }
