@@ -8,13 +8,14 @@
         </h1>
     </div>
     <nav [ngClass]="{'closed': !menuIsOpen}">
-        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</a>
-        <a routerLink="/facts" routerLinkActive="active">ALL Facts</a>
-        <a routerLink="/my" routerLinkActive="active">My Facts</a>
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
+            (click)="toggleMenu()">Home</a>
+        <a routerLink="/facts" routerLinkActive="active" (click)="toggleMenu()">ALL Facts</a>
+        <a routerLink="/my" routerLinkActive="active" (click)="toggleMenu()">My Facts</a>
     </nav>
-    <div class="menu-btn center" [ngClass]="{'clicked': menuIsOpen}" (click)="toggleMenu()">
+    <div class="screen" (click)="toggleMenu()"></div>
+    <div class=" menu-btn center" [ngClass]="{'clicked': menuIsOpen}" (click)="toggleMenu()">
         <div class="menu-btn-burger">
-
         </div>
     </div>
 </div>
