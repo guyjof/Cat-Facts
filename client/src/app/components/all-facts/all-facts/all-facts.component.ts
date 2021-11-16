@@ -19,9 +19,9 @@ export class AllFactsComponent implements OnInit {
 
   constructor(private factsService: FactsService) { }
 
-  addFactToUser(fact: Fact) {
+  addFactToUser(fact: Fact): void {
     this.factsService.saveFactToUser(fact)
-      .subscribe((res: any) => {
+      .subscribe(() => {
         console.log('Saved fact');
       })
   }

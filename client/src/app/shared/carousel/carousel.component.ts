@@ -9,7 +9,7 @@ import { Fact } from 'src/app/types';
 })
 export class CarouselComponent implements OnInit {
 
-  @Input() value: {}[] | any = []
+  @Input() value: Fact[] | [] = []
   @Input() addButton: boolean = true
   @Input() removeButton: boolean = true
   @Output() save = new EventEmitter<Fact>()
@@ -21,7 +21,7 @@ export class CarouselComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onMoveCarousel(diff: number): any {
+  onMoveCarousel(diff: number): void {
     if (this.currentItemIndex === this.value.length - 1 && diff === 1) {
       this.currentItemIndex = 0
     } else if (!this.currentItemIndex && diff === -1) {
@@ -31,17 +31,16 @@ export class CarouselComponent implements OnInit {
     }
   }
 
-  onMoveCarouselTo(val: number) {
+  onMoveCarouselTo(val: number): void {
     this.currentItemIndex = val
   }
 
-  addFactToUser(fact: Fact) {
+  addFactToUser(fact: Fact): void {
     this.save.emit(fact)
   }
-  removeFactFromUser(fact: Fact) {
+  removeFactFromUser(fact: Fact): void {
     this.remove.emit(fact._id)
   }
-
   onClick() {
     this.router.navigateByUrl('/facts');
   }

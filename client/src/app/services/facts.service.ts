@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Fact } from '../types';
+import { Observable } from 'rxjs';
 
 interface Facts {
   data: Fact[]
@@ -16,11 +17,11 @@ export class FactsService {
 
   constructor(private http: HttpClient) { }
 
-  public loadUserFacts(): any {
+  public loadUserFacts() {
     return this.http.get<Fact[]>(this.FACTS_URL)
   }
 
-  public saveFactToUser(fact: Fact): any {
+  public saveFactToUser(fact: Fact) {
     return this.http.post<Fact>(this.FACTS_URL, fact)
   }
 

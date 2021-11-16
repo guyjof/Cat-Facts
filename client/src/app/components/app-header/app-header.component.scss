@@ -1,0 +1,43 @@
+.app-header {
+  height: 66px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  .logo {
+    position: absolute;
+    left: 0;
+    h1 {
+      margin-left: 40px;
+      font-weight: 400;
+      font-size: 1.8rem;
+      letter-spacing: -1px;
+      span {
+        background-color: #f44238;
+        color: #fff;
+        padding: 5px 12px;
+        font-weight: 300;
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+        margin-right: 5px;
+      }
+    }
+  }
+  nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    a {
+      padding: 23px;
+      color: #000514;
+      font-size: 0.9rem;
+      &:hover {
+        box-shadow: inset 0px -4px 0px 0px #f44238;
+        transition: all 100ms;
+      }
+      &.active {
+        color: #f44238;
+        font-weight: 500;
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-<div *ngIf="value.length" class="conteiner">
+<div *ngIf="value.length" class="container">
     <div class="carousel">
         <div class="slider">
             <section class="carousel-item" *ngFor="let fact of value; let i = index">
@@ -8,7 +8,8 @@
                         <p class="center">{{fact.fact}}</p>
                         <button *ngIf="addButton" class="cta center-bottom" (click)="addFactToUser(fact)">Add to my
                             facts</button>
-                        <button *ngIf="removeButton" class="cta center-bottom" (click)="removeFactFromUser(fact)">Remove
+                        <button *ngIf="removeButton" class="cta empty center-bottom"
+                            (click)="removeFactFromUser(fact)">Remove
                             from my
                             facts</button>
                     </div>
@@ -27,5 +28,5 @@
 <div *ngIf="!value.length" class="error">
     <p>You dont have any facts yet.</p>
     <p>click here to add some</p>
-    <a routerLink="/facts" (click)="onClick()">Go To All Facts</a>
+    <a class="cta" routerLink="/facts" (click)="onClick()">Go To All Facts</a>
 </div>

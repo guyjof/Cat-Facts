@@ -13,10 +13,10 @@ export class MyFactsComponent implements OnInit {
 
   constructor(private factsService: FactsService) { }
 
-  removeFactFromUser(id: string) {
+  removeFactFromUser(id: string): void {
     if (!id) return console.error('No id');
     this.factsService.deleteFactFromUser(id)
-      .subscribe((response: any) => {
+      .subscribe(() => {
         console.log('Removed fact');
       })
   }

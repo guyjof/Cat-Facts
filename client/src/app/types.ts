@@ -3,11 +3,3 @@ export interface Fact {
     length: number
     _id?: string
 }
-
-export interface Breed {
-    breed: string,
-    country: string,
-    origin: string,
-    coat: string,
-    pattern: string
-}
