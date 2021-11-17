@@ -1,4 +1,4 @@
-<div class="msg-container" [ngClass]="{userMsg: getClass()}" *ngIf="userMsg">
+<div class="msg-container" [ngClass]="getClass()" *ngIf="userMsg">
     <p>
         {{userMsg.text}}
     </p>

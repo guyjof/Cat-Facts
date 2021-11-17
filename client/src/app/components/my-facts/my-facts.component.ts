@@ -17,9 +17,9 @@ export class MyFactsComponent implements OnInit {
 
   ngOnInit(): void {
     this.factsService.loadUserFacts()
-      .subscribe((response: Fact[]) => { 
+      .subscribe((response: Fact[]) => {
         this.isLoading = true
-        this.facts = response 
+        this.facts = response
         this.isLoading = false
       })
   }

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Fact } from '../types';
 import { Observable } from 'rxjs';
+import { catchError } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -23,14 +24,21 @@ export class FactsService {
 
   public deleteFactFromUser(id: string): Observable<any> {
     return this.http.delete<string>(this.FACTS_URL + id)
+      .pipe(
+        catchError(this.handleError)
+      )
   }
 
   public saveFact(fact: Fact): Observable<any> {
     return this.http.post<Fact>(this.FACTS_URL, fact)
   }
 
-  getFacts(): Observable<any> {
+  public getFacts(): Observable<any> {
     return this.http.get<Fact[]>(`https://catfact.ninja/facts?max_length=${this.maxLength}&limit=${this.factsPerPage}`)
+  }
+
+  private handleError(error: HttpErrorResponse): any {
+    return console.error(`Somthing went wrong: ${error.message}`)
   }
 
 

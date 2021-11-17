@@ -11,16 +11,14 @@ export class UserMsgComponent implements OnInit {
 
   public userMsg: Msg | null = null
 
-  constructor(private userMsgService: UserMsgService) {
-    this.userMsg = this.userMsgService.userMsg
-   }
+  constructor(private userMsgService: UserMsgService) { }
 
   ngOnInit(): void {
-
+    this.userMsgService.currentMessage.subscribe((message: any) => this.userMsg = message)
   }
 
-  getClass() :string{
-    return this.userMsg ? this.userMsg.type : '';
+  getClass(): string {
+    return this.userMsg?.type ? this.userMsg.type : '';
   }
 
 }

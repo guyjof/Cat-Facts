@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +7,8 @@ import { Component, Output, EventEmitter } from '@angular/core';
 })
 export class AppComponent {
   isScreenOpen: boolean = false
+
+  constructor() { }
 
   toggleScreen() {
     this.isScreenOpen = !this.isScreenOpen

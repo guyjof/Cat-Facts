@@ -1,5 +1,5 @@
-import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Msg } from "src/app/types";
 
 
@@ -8,13 +8,14 @@ import { Msg } from "src/app/types";
 })
 export class UserMsgService {
 
-  public userMsg: Msg | null = null
+  private userMsg: any = new BehaviorSubject<Msg | null>(null)
+  currentMessage: any = this.userMsg.asObservable()
 
   updateUserMsg(msg: Msg) {
-    this.userMsg = msg
+    this.userMsg.next(msg)
     setTimeout(() => {
-      this.userMsg = null
-    }, 2500)
+      this.userMsg.next(null)
+    }, 3500)
   }
 
 }

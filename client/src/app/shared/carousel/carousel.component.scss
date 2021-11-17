@@ -31,18 +31,16 @@
 .left,
 .right {
   position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
 }
 
 .left {
-  top: 50%;
-  transform: translateY(-50%);
   left: 10px;
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
 }
 .right {
-  top: 50%;
-  transform: translateY(-50%);
   right: 10px;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
@@ -63,7 +61,7 @@
   }
   .center {
     position: absolute;
-    top: 50%;
+    top: 43%;
     left: 50%;
     transform: translate(-50%, -50%);
   }

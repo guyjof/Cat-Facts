@@ -12,18 +12,19 @@ export class AllFactsComponent implements OnInit {
 
   allFacts: Fact[] = []
   myFacts: Fact[] = []
+  msg: any = ''
 
   constructor(private factsService: FactsService, public userMsgService: UserMsgService) { }
 
   ngOnInit(): void {
-    this.factsService.getFacts().subscribe(response => this.allFacts = response.data)
+    this.factsService.getFacts().subscribe(res => this.allFacts = res.data)
     this.factsService.loadUserFacts().subscribe(res => this.myFacts = res)
   }
 
   addFactToUser(fact: Fact): void {
     (this.myFacts.find(f => f.fact === fact.fact)
       ?
-      this.userMsgService.updateUserMsg({ type: 'error', text: 'Fact already is in "My Facts' })
+      this.userMsgService.updateUserMsg({ type: 'error', text: 'Fact already is in "My Facts"' })
       :
       this.factsService.saveFactToUser(fact)
         .subscribe(() => {
