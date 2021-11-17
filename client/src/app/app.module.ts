@@ -7,7 +7,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppHeaderComponent } from './components/app-header/app-header.component';
-
+import { UserMsgModule } from "./shared/user-msg/user-msg.module";
 
 @NgModule({
   declarations: [
@@ -19,7 +19,9 @@ import { AppHeaderComponent } from './components/app-header/app-header.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    UserMsgModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

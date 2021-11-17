@@ -6,9 +6,9 @@ import { Component, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  close: boolean = true
+  isScreenOpen: boolean = false
 
-  closeMenu() {
-    this.close = false
+  toggleScreen() {
+    this.isScreenOpen = !this.isScreenOpen
   }
 }

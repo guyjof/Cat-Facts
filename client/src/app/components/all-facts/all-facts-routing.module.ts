@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { AllFactsComponent } from './all-facts/all-facts.component';
+import { AllFactsComponent } from './all-facts.component';
 
 const routes: Routes = [
   { path: '', component: AllFactsComponent }

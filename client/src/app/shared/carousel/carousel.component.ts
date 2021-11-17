@@ -14,7 +14,6 @@ export class CarouselComponent implements OnInit {
   @Input() removeButton: boolean = true
   @Output() save = new EventEmitter<Fact>()
   @Output() remove = new EventEmitter<string>()
-  @Output() msg = new EventEmitter<string>()
 
   currentItemIndex: number = 0
 
@@ -38,11 +37,9 @@ export class CarouselComponent implements OnInit {
   }
   addFactToUser(fact: Fact): void {
     this.save.emit(fact)
-    this.msg.emit('Fact added to "My Facts"')
   }
   removeFactFromUser(fact: Fact): void {
     this.remove.emit(fact._id)
-    this.msg.emit('Fact removed from "My Facts"')
   }
   onClick() {
     this.router.navigateByUrl('/facts');

@@ -2,7 +2,7 @@
   width: 80%;
   max-width: 800px;
   position: absolute;
-  top: 50%;
+  top: 42%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -69,7 +69,7 @@
   }
   .center-bottom {
     position: absolute;
-    top: 85%;
+    top: 82%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
@@ -137,6 +137,7 @@ ul li {
 @media only screen and (max-width: 960px) {
   .container {
     width: 90%;
+    top: 50%;
   }
 
   .carousel-content {

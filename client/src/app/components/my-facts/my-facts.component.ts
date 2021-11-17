@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { UserMsgService } from 'src/app/services/user-msg.service';
 import { FactsService } from 'src/app/services/facts.service';
+import { Component, OnInit } from '@angular/core';
 import { Fact } from 'src/app/types';
 
 @Component({
@@ -10,31 +11,27 @@ import { Fact } from 'src/app/types';
 export class MyFactsComponent implements OnInit {
 
   facts: Fact[] = []
-  userMsg: string = ''
+  isLoading: boolean = false
 
-  constructor(private factsService: FactsService) { }
+  constructor(private factsService: FactsService, public userMsgService: UserMsgService) { }
 
-  showMsg(msg: string): void {
-    this.userMsg = msg
-    const delay: number = 3500
-    setTimeout(() => {
-      this.userMsg = ''
-    }, delay)
+  ngOnInit(): void {
+    this.factsService.loadUserFacts()
+      .subscribe((response: Fact[]) => { 
+        this.isLoading = true
+        this.facts = response 
+        this.isLoading = false
+      })
   }
 
   removeFactFromUser(id: string): void {
-    if (!id) return console.error('No id');
     this.factsService.deleteFactFromUser(id)
       .subscribe(() => {
         this.factsService.loadUserFacts()
           .subscribe((response: Fact[]) => {
             this.facts = response
+            this.userMsgService.updateUserMsg({ type: 'error', text: 'Fact removed from "My Facts"' })
           })
       })
-  }
-
-  ngOnInit(): void {
-    this.factsService.loadUserFacts()
-      .subscribe((response: Fact[]) => { this.facts = response })
   }
 }

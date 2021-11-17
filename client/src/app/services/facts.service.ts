@@ -3,10 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { Fact } from '../types';
 import { Observable } from 'rxjs';
 
-interface Facts {
-  data: Fact[]
-}
-
 @Injectable({
   providedIn: 'root'
 })
@@ -17,24 +13,24 @@ export class FactsService {
 
   constructor(private http: HttpClient) { }
 
-  public loadUserFacts() {
+  public loadUserFacts(): Observable<any> {
     return this.http.get<Fact[]>(this.FACTS_URL)
   }
 
-  public saveFactToUser(fact: Fact) {
+  public saveFactToUser(fact: Fact): Observable<any> {
     return this.http.post<Fact>(this.FACTS_URL, fact)
   }
 
-  public deleteFactFromUser(id: string) {
-    return this.http.delete(this.FACTS_URL + id)
+  public deleteFactFromUser(id: string): Observable<any> {
+    return this.http.delete<string>(this.FACTS_URL + id)
   }
 
-  public saveFact(fact: Fact) {
-    return this.http.post(this.FACTS_URL, fact)
+  public saveFact(fact: Fact): Observable<any> {
+    return this.http.post<Fact>(this.FACTS_URL, fact)
   }
 
-  getFacts() {
-    return this.http.get<Facts>(`https://catfact.ninja/facts?max_length=${this.maxLength}&limit=${this.factsPerPage}`)
+  getFacts(): Observable<any> {
+    return this.http.get<Fact[]>(`https://catfact.ninja/facts?max_length=${this.maxLength}&limit=${this.factsPerPage}`)
   }
 
 

@@ -7,14 +7,14 @@
             </a>
         </h1>
     </div>
-    <nav [ngClass]="{'closed': !menuIsOpen}">
+    <nav [ngClass]="{'closed': !isMenuOpen}">
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"
             (click)="toggleMenu()">Home</a>
         <a routerLink="/facts" routerLinkActive="active" (click)="toggleMenu()">ALL Facts</a>
         <a routerLink="/my" routerLinkActive="active" (click)="toggleMenu()">My Facts</a>
     </nav>
     <div class="screen" (click)="toggleMenu()"></div>
-    <div class=" menu-btn center" [ngClass]="{'clicked': menuIsOpen}" (click)="toggleMenu()">
+    <div class=" menu-btn center" [ngClass]="{'clicked': isMenuOpen}" (click)="toggleMenu()">
         <div class="menu-btn-burger">
         </div>
     </div>

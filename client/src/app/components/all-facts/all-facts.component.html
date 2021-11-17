@@ -1,0 +1,8 @@
+<ng-container *ngIf="allFacts.length; else loader">
+    <app-carousel (save)="addFactToUser($event)" [removeButton]="false" [value]="allFacts">
+    </app-carousel>
+</ng-container>
+
+<ng-template #loader>
+    <app-loader></app-loader>
+</ng-template>

@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { AllFactsComponent } from './all-facts/all-facts.component';
+import { AllFactsComponent } from './all-facts.component';
 import { AllFactsRoutingModule } from './all-facts-routing.module';
 import { CarouselModule } from 'src/app/shared/carousel/carousel.module';
-import { UserMsgModule } from 'src/app/shared/user-msg/user-msg.module';
+import { LoaderModule } from 'src/app/shared/loader/loader.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { UserMsgModule } from 'src/app/shared/user-msg/user-msg.module';
     CommonModule,
     AllFactsRoutingModule,
     CarouselModule,
-    UserMsgModule,
+    LoaderModule
   ]
 })
 export class AllFactsModule { }

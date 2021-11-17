@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-app-header',
@@ -6,20 +6,19 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./app-header.component.scss']
 })
 export class AppHeaderComponent implements OnInit {
-  @Input() close: boolean = true
-  menuIsOpen: boolean = false
+
+  @Output() toggle = new EventEmitter
+  
+  isMenuOpen: boolean = false
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  ngOnChanges(): void {
-    this.menuIsOpen = this.close
-  }
-
   toggleMenu() {
-    this.menuIsOpen = !this.menuIsOpen
+    this.isMenuOpen = !this.isMenuOpen
+    this.toggle.emit()
   }
 
 }

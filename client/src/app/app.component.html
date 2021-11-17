@@ -1,3 +1,4 @@
-<app-app-header [close]="close"></app-app-header>
-<div class="screen" (click)="closeMenu()"></div>
+<app-app-header (toggle)="toggleScreen()"></app-app-header>
+<div *ngIf="isScreenOpen" class="screen" (click)="toggleScreen()"></div>
 <router-outlet></router-outlet>
+<user-msg></user-msg>

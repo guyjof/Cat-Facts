@@ -1,4 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { UserMsgService } from 'src/app/services/user-msg.service';
+import { Msg } from 'src/app/types';
 
 @Component({
   selector: 'user-msg',
@@ -7,12 +9,18 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UserMsgComponent implements OnInit {
 
-  @Input() msg: string = ''
+  public userMsg: Msg | null = null
 
-  constructor() { }
+  constructor(private userMsgService: UserMsgService) {
+    this.userMsg = this.userMsgService.userMsg
+   }
 
   ngOnInit(): void {
 
+  }
+
+  getClass() :string{
+    return this.userMsg ? this.userMsg.type : '';
   }
 
 }

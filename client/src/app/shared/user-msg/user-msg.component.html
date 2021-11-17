@@ -1,5 +1,5 @@
-<div class="msg-container" *ngIf="msg">
+<div class="msg-container" [ngClass]="{userMsg: getClass()}" *ngIf="userMsg">
     <p>
-        {{msg}}
+        {{userMsg.text}}
     </p>
 </div>

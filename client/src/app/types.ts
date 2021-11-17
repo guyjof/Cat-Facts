@@ -3,3 +3,8 @@ export interface Fact {
     length: number
     _id?: string
 }
+
+export interface Msg {
+    text: string,
+    type: string
+}

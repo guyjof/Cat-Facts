@@ -1,1 +1,62 @@
-[]
+[
+  {
+    "_id": "ouvo5tn0hcl",
+    "fact": "Abraham Lincoln loved cats. He had four of them while he lived in the White House.",
+    "length": 82
+  },
+  {
+    "_id": "u22hsdww2io",
+    "fact": "The Pilgrims were the first to introduce cats to North America.",
+    "length": 63
+  },
+  {
+    "_id": "ipmtmsj3v4j",
+    "fact": "A cat cannot see directly under its nose.",
+    "length": 41
+  },
+  {
+    "_id": "1xqoi1knklf",
+    "fact": "The claws on the cat’s back paws aren’t as sharp as the claws on the front paws because the claws in the back don’t retract and, consequently, become worn.",
+    "length": 155
+  },
+  {
+    "_id": "0vb9u5wts9pd",
+    "fact": "Cats don’t have sweat glands over their bodies like humans do. Instead, they sweat only through their paws.",
+    "length": 107
+  },
+  {
+    "_id": "oz5pzahp5qq",
+    "fact": "A cat's jaw has only up and down motion; it does not have any lateral, side to side motion, like dogs and humans.",
+    "length": 113
+  },
+  {
+    "_id": "vdl37s6uc8",
+    "fact": "The first cartoon cat was Felix the Cat in 1919. In 1940, Tom and Jerry starred in the first theatrical cartoon “Puss Gets the Boot.” In 1981 Andrew Lloyd Weber created the musical Cats, based on T.S. Eliot’s Old Possum’s Book of Practical Cats.",
+    "length": 245
+  },
+  {
+    "_id": "9trl3shfina",
+    "fact": "Tests done by the Behavioral Department of the Musuem of Natural History conclude that while a dog's memory lasts about 5 minutes, a cat's recall can last as long as 16 hours.",
+    "length": 175
+  },
+  {
+    "_id": "jvk4q4i612",
+    "fact": "If a cat is frightened, the hair stands up fairly evenly all over the body; when the cat is threatened or is ready to attack, the hair stands up only in a narrow band along the spine and tail.",
+    "length": 192
+  },
+  {
+    "_id": "u1eh76xbixc",
+    "fact": "Cats take between 20-40 breaths per minute.",
+    "length": 43
+  },
+  {
+    "_id": "le7f6wfbvxe",
+    "fact": "A cats field of vision is about 185 degrees.",
+    "length": 44
+  },
+  {
+    "_id": "td9h5enrecj",
+    "fact": "Unlike other cats, lions have a tuft of hair at the end of their tails.",
+    "length": 71
+  }
+]
