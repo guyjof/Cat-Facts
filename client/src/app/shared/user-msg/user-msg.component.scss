@@ -4,6 +4,9 @@
   bottom: 20px;
   right: 10px;
   background-color: #202124;
+  &.error {
+    background-color: #f44238;
+  }
   color: #fefefe;
   width: 350px;
   width: fit-content;
@@ -27,9 +30,4 @@
       right: 10px;
     }
   }
-  //   @include for-mobile-layout {
-  //     bottom: 74px;
-  //     left: 50%;
-  //     transform: translateX(-50%);
-  //   }
 }

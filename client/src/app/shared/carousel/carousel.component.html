@@ -6,12 +6,12 @@
                     <button (click)="onMoveCarousel(-1)" class="arrow left"></button>
                     <div class="carousel-content">
                         <p class="center">{{fact.fact}}</p>
-                        <button *ngIf="addButton" class="cta center-bottom" (click)="addFactToUser(fact)">Add to my
-                            facts</button>
+                        <button *ngIf="addButton" class="cta center-bottom" (click)="addFactToUser(fact)">Add To My
+                            Facts</button>
                         <button *ngIf="removeButton" class="cta empty center-bottom"
                             (click)="removeFactFromUser(fact)">Remove
-                            from my
-                            facts</button>
+                            From My
+                            Facts</button>
                     </div>
                     <button (click)="onMoveCarousel(1)" class="arrow right"></button>
                     <ul>

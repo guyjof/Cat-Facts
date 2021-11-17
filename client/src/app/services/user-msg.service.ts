@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { Msg } from "src/app/types";
 
@@ -15,4 +16,5 @@ export class UserMsgService {
       this.userMsg = null
     }, 2500)
   }
+
 }

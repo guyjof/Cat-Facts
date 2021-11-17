@@ -3,11 +3,13 @@
   display: flex;
   justify-content: center;
   position: relative;
-  background: #fff;
+  background-color: #fff;
   z-index: 10;
   .logo {
     position: absolute;
     left: 0;
+    z-index: 10;
+    background-color: #fff;
     h1 {
       margin-left: 40px;
       font-weight: 400;
@@ -47,10 +49,12 @@
 @media only screen and (max-width: 960px) {
   .app-header {
     height: 50px;
+    z-index: 10;
     .logo {
       position: absolute;
       left: 0;
-      top: 7px;
+      top: 0;
+      line-height: 45px;
       h1 {
         margin-left: 40px;
         font-weight: 400;
@@ -62,15 +66,19 @@
       }
     }
     nav {
-      position: fixed;
+      &.closed {
+        top: -200px;
+        z-index: 5;
+      }
+      position: absolute;
       top: 50px;
-      z-index: 5;
       width: 100%;
       height: fit-content;
       box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
       border-top: 1px solid #dae0ec;
       background: #fff;
       flex-direction: column;
+      transition: 0.5s;
       & > a {
         border-bottom: 1px solid #dae0ec;
         width: 100%;
@@ -86,9 +94,6 @@
           transition: all 100ms;
         }
       }
-      &.closed {
-        display: none;
-      }
     }
   }
 
@@ -98,6 +103,7 @@
     right: 0;
     width: 60px;
     height: 60px;
+    z-index: 10;
   }
 
   .menu-btn-burger {
